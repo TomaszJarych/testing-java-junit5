@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class IndexControllerTest {
@@ -15,11 +16,13 @@ class IndexControllerTest {
 		indexController = new IndexController();
 	}
 
+	@DisplayName(value="Test proper view name is returned")
 	@Test
 	void testIndex() {
 		assertEquals("index", indexController.index(), "index() method failed");
 	}
 
+	@DisplayName(value="Test exception")
 	@Test
 	void testOupsHandler() {
 		assertEquals("notimplemented", indexController.oupsHandler(), " oupsHandler() failded");
