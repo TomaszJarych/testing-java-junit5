@@ -17,8 +17,10 @@ import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.JRE;
 import org.junit.jupiter.api.condition.OS;
 
-@Tag("controller")
-class IndexControllerTest {
+import guru.springframework.sfgpetclinic.InterfaceTest.ControllerTest;
+
+//@Tag("controller")
+class IndexControllerTest implements ControllerTest {
 
 	IndexController indexController;
 
