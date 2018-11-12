@@ -1,7 +1,9 @@
 package guru.springframework.sfgpetclinic.model;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.jupiter.api.Test;
 
 class OwnerTest {
@@ -40,6 +42,13 @@ class OwnerTest {
 		// ends after first fail;
 		
 		
+		/*
+		 * hamcrest example
+		 */
+		assertThat(owner.getCity(), is("Dallas"));
+		
 	}
+	
+	
 
 }
