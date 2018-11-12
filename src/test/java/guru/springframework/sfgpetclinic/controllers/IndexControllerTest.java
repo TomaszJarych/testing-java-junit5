@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -28,6 +29,9 @@ class IndexControllerTest {
 	@Test
 	void testIndex() {
 		assertEquals("index", indexController.index(), "index() method failed");
+		
+		//AssertJ assertions 
+		assertThat(indexController.index()).isEqualTo("index");
 	}
 
 	@DisplayName(value = "Test exception")
@@ -90,13 +94,13 @@ class IndexControllerTest {
 	@Test
 	void testMeOnJava11() {
 	}
-	
-	@EnabledIfEnvironmentVariable(named="USER", matches="tj")
+
+	@EnabledIfEnvironmentVariable(named = "USER", matches = "tj")
 	@Test
-	void testIfUserIsTJ(){
+	void testIfUserIsTJ() {
 	}
-	@EnabledIfEnvironmentVariable(named="USER", matches="Fred")
+	@EnabledIfEnvironmentVariable(named = "USER", matches = "Fred")
 	@Test
-	void testIfUserIsFred(){
+	void testIfUserIsFred() {
 	}
 }
