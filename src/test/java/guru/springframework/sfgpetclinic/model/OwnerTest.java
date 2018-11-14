@@ -81,6 +81,14 @@ class OwnerTest {
 			+ DEFAULT_DISPLAY_NAME)
 	@CsvSource({"FL,1,1", "OH,2,2", "MI,3,3"})
 	void csvInputTest(String stateName, int val1, int val2) {
-		System.out.println(stateName+" val= "+val1+" | "+val2);
+		System.out.println(stateName + " val= " + val1 + " | " + val2);
+	}
+
+	@DisplayName("CSV File source Test -")
+	@ParameterizedTest(name = DISPLAY_NAME_PLACEHOLDER + " "
+			+ DEFAULT_DISPLAY_NAME)
+	@CsvFileSource(resources="/CSV/csvInput.csv", numLinesToSkip=1)
+	void csvFileInputTest(String stateName, int val1, int val2) {
+		System.out.println(stateName + " val= " + val1 + " | " + val2);
 	}
 }
