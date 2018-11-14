@@ -1,13 +1,14 @@
 package guru.springframework.sfgpetclinic.model;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Tag;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 @Tag("model")
 class OwnerTest {
@@ -44,14 +45,19 @@ class OwnerTest {
 		assertEquals("123456789", owner.getTelephone(), "Invalid phone number");
 		
 		// ends after first fail;
-		
-		
 		/*
 		 * hamcrest example
 		 */
 		assertThat(owner.getCity(), is("Dallas"));
-		
 	}
+	
+	@ParameterizedTest
+	@ValueSource(strings= {"Spring","Framework","Guru"})
+	void parameterizedTest(String val){
+		System.out.println(val);
+	}
+	
+	
 	
 	
 
