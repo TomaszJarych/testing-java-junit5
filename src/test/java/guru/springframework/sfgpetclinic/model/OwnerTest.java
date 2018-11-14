@@ -1,11 +1,14 @@
 package guru.springframework.sfgpetclinic.model;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Tag;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.params.ParameterizedTest.DEFAULT_DISPLAY_NAME;
+import static org.junit.jupiter.params.ParameterizedTest.DISPLAY_NAME_PLACEHOLDER;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -51,7 +54,8 @@ class OwnerTest {
 		assertThat(owner.getCity(), is("Dallas"));
 	}
 	
-	@ParameterizedTest
+	@DisplayName("Value source Test -")
+	@ParameterizedTest(name=DISPLAY_NAME_PLACEHOLDER+" "+DEFAULT_DISPLAY_NAME)
 	@ValueSource(strings= {"Spring","Framework","Guru"})
 	void parameterizedTest(String val){
 		System.out.println(val);
