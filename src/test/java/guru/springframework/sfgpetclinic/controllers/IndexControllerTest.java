@@ -45,10 +45,10 @@ class IndexControllerTest implements ControllerTest {
 			indexController.oupsHandler();
 		});
 		// assertEquals("notimplemented", indexController.oupsHandler(), "
-		// oupsHandler() failded");
+		// oupsHandler() failed");
 		// assertTrue("notimplemented".equals(indexController.oupsHandler()), ()
 		// -> "This is some expensive "
-		// + "Messeage to build " + "for my tets. Make if you only really,
+		// + "Message to build " + "for my test. Make if you only really,
 		// really have to");
 		// lambda in JUnit 5
 	}
